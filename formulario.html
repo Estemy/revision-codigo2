@@ -5,36 +5,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css"> <!--se corrigío la ruta del css-->
+
   <title>Formulario</title>
 </head>
+
 <body>
   <h1>Bienvenidos a mi fiesta</h1>
   <h2>Por favor, confirmar asistencia:</h2>
 
-  <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
-    <br />
-    Edad <input type="number" name="age" id="age">
-    <br />
+  <form id="formulario" class="formulario"></form>
+    <fieldset> <!--Agregue un fielset para agrupar los campos del formulario-->
+      <legend>Confirmar asistencia</legend> <!-- Anadí una etiqueta <legend> para describir el grupo de campos.-->
 
-    Nacionalidad
-    <select name="nationality" id="nationality">
-      <option value="ar">Argentina</option>
-      <option value="mx">Mexicana</option>
-      <option value="per">Peruana</option>
-      <option value="vnzl">Venezolana</option>
-    </select>
-    <br />
-    <input type="submit">
+      <!--Añadi la etiqueta label por que mejora la accesibilidad para los usuarios de lectores de pantalla y 
+     facilita al hacer clic en la etiqueta para enfocar el campo correspondiente.-->
+
+
+      <!-- Etiqueta <label> para el campo Nombre -->
+      <label for="name">Nombre:</label> <!-- <label> asociadas a cada input para mejorar la <accesibilidad-->
+      <input type="text" name="name" id="name" required>
+      <br />
+
+      <!-- Etiqueta <label> para el campo Edad -->
+      <label for="age">Edad:</label>
+      <input type="number" name="age" id="age" min="0" required>
+      <br />
+
+      <!-- Etiqueta <label> para el campo Nacionalidad -->
+      <label for="nationality">Nacionalidad:</label>
+      <select name="nationality" id="nationality" required>
+        <option value="ar">Argentina</option>
+        <option value="mx">Mexicana</option>
+        <option value="pe">Peruana</option> <!-- Corrección de la abreviatura de Perú -->
+        <option value="ve">Venezolana</option> <!-- Corrección de la abreviatura de Venezuela -->
+      </select>
+      <br />
+      <!--Investigue como corregir las abreviaturas siguiendo los codigos estandar ISO 3166-1 alfa 2 --->
+
+
+      <!-- Añadido el atributo 'value' al botón de envío-->
+      <input type="submit" value="Enviar">
+    </fieldset>
   </form>
 
   <div>
     <h2>Lista de invitados</h2>
-
   </div>
 
-  <script src="../formulario.js"></script>
+  <!--Corrección de la ruta del archivo JavaScript-->
+  <script src="./formulario.js"></script>
 </body>
 
 </html>
